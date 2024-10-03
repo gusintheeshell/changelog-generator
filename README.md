@@ -38,12 +38,16 @@ This is a command-line utility for generating changelogs from Git commits. It al
 
 - `--output <file>`: Specifies the file where the changelog will be saved. If not specified, the changelog will be displayed in the terminal.
 
+## Demo Video
+
+Watch the following demo video to see the changelog generator in action:
+
+https://github.com/user-attachments/assets/87bdad2a-7e88-4bd7-a710-3372c9ad23eb
+
 ## Libraries Used
 
 - `clap`: For command-line argument parsing.
 - `git2`: For interacting with Git repositories.
-- `serde`: For data serialization and deserialization.
-- `serde_json`: For working with JSON data.
 - `chrono`: For date and time manipulation.
 
 ## Project Structure
