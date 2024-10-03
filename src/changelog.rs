@@ -28,6 +28,7 @@ pub fn generate_markdown_changelog(commits: Vec<Commit>) -> String {
 
   let mut features = Vec::new();
   let mut fixes = Vec::new();
+  let mut refactor = Vec::new();
   let mut others = Vec::new();
 
   for commit in commits {
@@ -35,6 +36,8 @@ pub fn generate_markdown_changelog(commits: Vec<Commit>) -> String {
       features.push(commit);
     } else if commit.message.starts_with("fix:") {
       fixes.push(commit);
+    } else if commit.message.starts_with("refactor:") {
+      refactor.push(commit);
     } else {
       others.push(commit);
     }
@@ -52,6 +55,14 @@ pub fn generate_markdown_changelog(commits: Vec<Commit>) -> String {
     changelog.push_str("## Bug Fixes\n\n");
     for fix in fixes {
       changelog.push_str(&format!("- {} by {} ({})\n", fix.message, fix.author, fix.hash));
+    }
+    changelog.push_str("\n");
+  }
+
+  if !refactor.is_empty() {
+    changelog.push_str("## Refactors\n\n");
+    for refact in refactor {
+      changelog.push_str(&format!("- {} by {} ({})\n", refact.message, refact.author, refact.hash));
     }
     changelog.push_str("\n");
   }
