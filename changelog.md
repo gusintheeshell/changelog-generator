@@ -2,6 +2,8 @@
 
 ## Features
 
+- feat: add changelog.md with initial changelog entries
+ by Gustavo Barbosa (d8a5736345b8f955f19db3e2f0c55d9f916deebe)
 - feat: add get_commits function in git.rs
  by Gustavo Barbosa (a8715b480bbbff0e079bc5aa618f476057ba4d80)
 - feat: add save_to_file function in file_utils.rs
